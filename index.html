@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/script.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <head>
+<style>
+body {
+  background-color:  #7a7a52;
+}
+h1 {
+  text-align: center;
+}
+#p {
+  border-style: inset;
+  width: 1000px;
+  height: 400px;
+  margin-top: 130px;
+  margin-right: 80px;
+  background-color: #b3b3ff;
+}
+p{
+  margin-top: 150px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 25px;
+color: #7a7a52; 
+}
+#first{
+  border-style: inset;
+}
+#second{
+  border-style: inset;
+  align-content: center;
+  margin-top: 20px;
+  text-align:center;
+
+
+}
+h7{
+  color: #7a7a52;
+}
+button{
+  align-content: center;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+ <div class="row">
+ <div class="col-sm-7" style="margin: 50px">
+  <div class="container-sm" id="p">
+  <div class="row">
+    <div class="col">
+      <p><b>Calculator For Students</b></p>
+    </div>
+    <div class="col">
+      
+      <div class="app-form">
+        <div class="app-form-group">
+          <input type="text" class="app-form-control" placeholder="English" id="eng"></div>
+          <div class="app-form-group">
+          <input type="text" class="app-form-control" placeholder="Math" id="mth"></div>
+          <div class="app-form-group">
+          <input type="text" class="app-form-control" placeholder="Punjabi" id="Pbi"></div>
+          <div class="app-form-group">
+          <input type="text" class="app-form-control" placeholder="Hindi" id="Hd"></div>
+          <div class="app-form-group">
+          <input type="text" class="app-form-control" placeholder="Science" id="sci"></div>
+           <div class="app-form-group">
+          <input type="text" class="app-form-control" placeholder="History" id="His"></div>
+          <div class="app-form-group">
+          <input type="text" class="app-form-control" placeholder="General Subject-1" id="GS"></div>
+          <div class="app-form-group">
+          <input type="text" class="app-form-control" placeholder="General Subject-2" id="gs2"></div>
+          <div class="button">
+          <button type="submit" name="Show Percentage" value="" class="app-form-button" onclick="cal()"><b><h7>Show percentage</h7></b></button></div></div></div>
+
+         
+<div class="container" id="showdata"><b>Result:</b>
+  
+
+ 
+</div>
+    </div>
+  </div>
+  </div>
+  <script>
+   const cal = () =>{
+    let eng = document.getElementById('eng').value;
+    let mth = document.getElementById('mth').value;
+    let Pbi = document.getElementById('Pbi').value;
+    let Hd = document.getElementById('Hd').value;
+    let sci = document.getElementById('sci').value;
+    let GS = document.getElementById('GS').value;
+    let gs2 = document.getElementById('gs2').value;
+    let grade="";
+    let totalmarks = parseFloat(eng) + parseFloat(mth) + parseFloat(Pbi) + parseFloat(Hd) + parseFloat(sci) + parseFloat(GS) + parseFloat(gs2);
+    
+    let perc = (totalmarks/700)*100;
+   
+    if (perc <=100 && perc >=80){
+      grade = "A";
+    }else if (perc <=79 && perc >=60) {
+     grade = "B";
+   }
+   else if (perc <=59 && perc >=40) {
+     grade = "C";
+   }
+   else if (perc <=39 && perc >=20) {
+     grade = "D";
+   }
+   else {
+     grade = "F";
+   }
+   document.getElementById("showdata").innerHTML = ` Total:  ${totalmarks}<br> Percentage: ${perc}% <br> Grade: ${grade} `
+
+   }
+  </script>
+
+
+
+  
+
+</body>
+</html>
